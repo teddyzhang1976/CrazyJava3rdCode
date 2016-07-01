@@ -1,5 +1,5 @@
 
-package test;
+package ch06.d12;
 /**
  * Description:
  * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
