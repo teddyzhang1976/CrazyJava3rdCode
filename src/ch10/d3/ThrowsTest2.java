@@ -1,3 +1,5 @@
+package ch10.d3;
+
 
 import java.io.*;
 /**

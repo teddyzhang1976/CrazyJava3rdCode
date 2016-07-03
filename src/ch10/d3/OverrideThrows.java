@@ -1,3 +1,5 @@
+package ch10.d3;
+
 
 import java.io.*;
 /**
@@ -10,12 +12,19 @@ import java.io.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-public class ThrowsTest
+public class OverrideThrows
 {
-	public static void main(String[] args)
-		throws IOException
+	public void test()throws IOException
 	{
 		FileInputStream fis = new FileInputStream("a.txt");
+	}
+}
+class Sub extends OverrideThrows
+{
+	// 子类方法声明抛出了比父类方法更大的异常
+	// 所以下面方法出错
+	public void test()throws Exception
+	{
 	}
 }
 

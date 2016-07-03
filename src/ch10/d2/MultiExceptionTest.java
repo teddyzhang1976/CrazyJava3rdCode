@@ -1,3 +1,5 @@
+package ch10.d2;
+
 
 
 /**
@@ -27,7 +29,7 @@ public class MultiExceptionTest
 			System.out.println("程序发生了数组越界、数字格式异常、算术异常之一");
 			// 捕捉多异常时，异常变量默认有final修饰，
 			// 所以下面代码有错：
-			ie = new ArithmeticException("test");  // ①
+			//ie = new ArithmeticException("test");  // ①
 		}
 		catch (Exception e)
 		{

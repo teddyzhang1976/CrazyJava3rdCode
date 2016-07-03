@@ -1,5 +1,7 @@
+package ch10.d2;
 
 
+import java.util.*;
 /**
  * Description:
  * <br/>Õ¯’æ: <a href="http://www.crazyit.org">∑ËøÒJava¡™√À</a>
@@ -10,24 +12,22 @@
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-public class ThreadExceptionTest implements Runnable
+public class NullTest
 {
-	public void run()
-	{
-		firstMethod();
-	}
-	public void firstMethod()
-	{
-		secondMethod();
-	}
-	public void secondMethod()
-	{
-		int a = 5;
-		int b = 0;
-		int c = a / b;
-	}
 	public static void main(String[] args)
 	{
-		new Thread(new ThreadExceptionTest()).start();
+		Date d = null;
+		try
+		{
+			System.out.println(d.after(new Date()));
+		}
+		catch (NullPointerException ne)
+		{
+			System.out.println("ø’÷∏’Î“Ï≥£");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Œ¥÷™“Ï≥£");
+		}
 	}
 }

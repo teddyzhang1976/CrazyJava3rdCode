@@ -1,5 +1,7 @@
+package ch10.d5;
 
-import java.io.*;
+
+
 /**
  * Description:
  * <br/>利嫋: <a href="http://www.crazyit.org">決髄Java選男</a>
@@ -10,18 +12,24 @@ import java.io.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-public class AccessExceptionMsg
+public class ThreadExceptionTest implements Runnable
 {
+	public void run()
+	{
+		firstMethod();
+	}
+	public void firstMethod()
+	{
+		secondMethod();
+	}
+	public void secondMethod()
+	{
+		int a = 5;
+		int b = 0;
+		int c = a / b;
+	}
 	public static void main(String[] args)
 	{
-		try
-		{
-			FileInputStream fis = new FileInputStream("a.txt");
-		}
-		catch (IOException ioe)
-		{
-			System.out.println(ioe.getMessage());
-			ioe.printStackTrace();
-		}
+		new Thread(new ThreadExceptionTest()).start();
 	}
 }

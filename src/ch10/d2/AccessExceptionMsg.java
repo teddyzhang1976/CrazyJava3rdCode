@@ -1,5 +1,7 @@
+package ch10.d2;
 
-import java.util.*;
+
+import java.io.*;
 /**
  * Description:
  * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
@@ -10,22 +12,18 @@ import java.util.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-public class NullTest
+public class AccessExceptionMsg
 {
 	public static void main(String[] args)
 	{
-		Date d = null;
 		try
 		{
-			System.out.println(d.after(new Date()));
+			FileInputStream fis = new FileInputStream("a.txt");
 		}
-		catch (NullPointerException ne)
+		catch (IOException ioe)
 		{
-			System.out.println("空指针异常");
-		}
-		catch(Exception e)
-		{
-			System.out.println("未知异常");
+			System.out.println(ioe.getMessage());
+			ioe.printStackTrace();
 		}
 	}
 }
